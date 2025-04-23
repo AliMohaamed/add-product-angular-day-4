@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <div class="d-flex gap-4 row">
+    @for (product of myProducts; track $index) {
+    <div class="product-card col-md-5">
+      <div class="card-content">
+        <h5 class="product-title">{{ product.name }} Details</h5>
+
+        <div class="product-info name-info">
+          <div class="info-icon icon-name">
+            <i class="fas fa-book"></i>
+          </div>
+          <p class="info-name">Product Name:</p>
+          <p class="info-value">{{ product.name }}</p>
+        </div>
+
+        <div class="product-info price-info">
+          <div class="info-icon icon-price">
+            <i class="fas fa-tag"></i>
+          </div>
+          <p class="info-name">Product Price:</p>
+          <p class="info-value">{{ product.price | currency }}</p>
+        </div>
+
+        <div class="product-info quantity-info">
+          <div class="info-icon icon-quantity">
+            <i class="fas fa-box"></i>
+          </div>
+          <p class="info-name">Quantity Available:</p>
+          <p class="info-value">{{ product.quantity }}</p>
+        </div>
+
+        <div class="btn-container">
+          <button class="btn btn-offer" (click)="getOffer($index)">
+            Get Offer
+          </button>
+          <button class="btn btn-remove" (click)="deleteProduct($index)">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+    }@empty {
+    <div></div>
+    }
+  </div>
+</div>
