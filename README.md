@@ -1,4 +1,4 @@
-# App Product Using Angular
+# Add Product Using Angular
 
 A modern web application for managing product inventory with a clean user interface.
 
